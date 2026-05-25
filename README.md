@@ -1,5 +1,7 @@
 # Habit Tracker — Web
 
+**Live demo:** [habit-trackerweb.netlify.app/habits](https://habit-trackerweb.netlify.app/habits)
+
 SPA-трекер привычек для браузера: расписания, ежедневный чек-лист, стрики, аналитика и галерея обложек. Данные хранятся локально (IndexedDB), без backend — готов к деплою на Netlify.
 
 ## Что умеет
@@ -65,7 +67,17 @@ src/
 
 ## Скриншоты
 
-Добавьте PNG в `docs/screenshots/` (`today.png`, `stats.png`) — они появятся в README и на странице портфолио.
+**Сегодня**
+
+![Экран «Сегодня»](readme_img/main_screen.png)
+
+**Привычки**
+
+![Список привычек](readme_img/habit.png)
+
+**Аналитика**
+
+![Статистика и heatmap](readme_img/stat.png)
 
 ## Лицензия
 
