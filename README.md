@@ -2,10 +2,6 @@
 
 SPA-трекер привычек для браузера: расписания, ежедневный чек-лист, стрики, аналитика и галерея обложек. Данные хранятся локально (IndexedDB), без backend — готов к деплою на Netlify.
 
-**Репозиторий:** [github.com/slavaslava05/habit-tracker-web](https://github.com/slavaslava05/habit-tracker-web)
-
-> Web MVP по [ТЗ Habit Tracker](https://github.com/slavaslava05/habit_tracker) — реализован функционал без серверной синхронизации и OAuth.
-
 ## Что умеет
 
 - **Привычки** — CRUD, категории (системные + свои), бинарная и количественная отметка
