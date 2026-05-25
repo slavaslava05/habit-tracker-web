@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    @apply bg-warm-100 text-warm-900 dark:bg-warm-900 dark:text-warm-100 min-h-screen;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-sage-600 dark:outline-sage-400;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Font Awesome: не даём SVG раздуваться от % / flex */
+.svg-inline--fa {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-check {
+  animation: check-pop 280ms ease-out;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.field-input {
+  @apply w-full rounded-card border border-warm-300 dark:border-warm-600 bg-warm-50 dark:bg-warm-900 px-3 py-2 text-sm;
+}
+
+.skeleton {
+  @apply rounded-card bg-warm-200/80 dark:bg-warm-800/80;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
