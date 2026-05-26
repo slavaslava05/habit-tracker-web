@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { faFire } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Habit } from '@/types';
 import { HabitCover } from './HabitCover';
+import { StreakBadge } from './StreakBadge';
 import { calculateStreak } from '@/lib/streak';
 import { useAppStore } from '@/store/useAppStore';
 import { scheduleLabel } from '@/lib/schedule';
@@ -41,12 +40,7 @@ export function HabitCard({ habit, showSchedule }: HabitCardProps) {
             {scheduleLabel(habit.schedule)}
           </p>
         )}
-        {streak > 0 && (
-          <p className="text-xs text-coral-500 dark:text-coral-400 mt-1 font-medium flex items-center gap-1">
-            <FontAwesomeIcon icon={faFire} className="text-[0.7rem]" />
-            {streak} {streak === 1 ? 'день' : streak < 5 ? 'дня' : 'дней'} подряд
-          </p>
-        )}
+        <StreakBadge streak={streak} className="mt-1 block" />
       </div>
     </Link>
   );

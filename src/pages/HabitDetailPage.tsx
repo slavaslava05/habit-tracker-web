@@ -1,6 +1,6 @@
 import { faFire } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { AppIcon } from '@/components/icons/AppIcon';
 import { useAppStore } from '@/store/useAppStore';
 import { HabitCover } from '@/components/habits/HabitCover';
 import { Heatmap } from '@/components/charts/Heatmap';
@@ -154,9 +154,11 @@ function StatBox({
   return (
     <div className="rounded-card bg-warm-50 dark:bg-warm-800/80 p-3 text-center shadow-card">
       <p className="text-xs text-warm-800/60 dark:text-warm-200/50">{label}</p>
-      <p className="font-display text-lg font-semibold mt-0.5 flex items-center justify-center gap-1">
-        {streak && <FontAwesomeIcon icon={faFire} className="text-coral-500 text-sm" />}
-        {value}
+      <p className="font-display text-lg font-semibold mt-0.5 inline-flex items-center justify-center gap-1.5 w-full">
+        {streak && (
+          <AppIcon icon={faFire} size="xs" className="text-coral-500 dark:text-coral-400" />
+        )}
+        <span>{value}</span>
       </p>
     </div>
   );

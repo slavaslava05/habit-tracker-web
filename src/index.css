@@ -22,11 +22,18 @@
   }
 }
 
-/* Font Awesome: не даём SVG раздуваться от % / flex */
+/* Font Awesome: ограничиваем SVG внутри наших контейнеров */
 .svg-inline--fa {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  vertical-align: middle;
+}
+
+span[style*='minWidth'] .svg-inline--fa,
+.inline-flex.shrink-0 .svg-inline--fa {
+  width: inherit !important;
+  height: inherit !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 @keyframes check-pop {
